@@ -20,3 +20,11 @@ list_second = [2,5,1,7,24,12,14,95,67]
 list_second.sort()
 
 print(list_second)
+
+#name normalized function
+def normalize_name(name: str) -> str:
+    return name.strip().lower()
+
+names = [' Alice ', "BOB", "Carlos"]
+normalized_names = [normalize_name(name) for name in names]
+print(normalized_names)

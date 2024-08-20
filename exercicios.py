@@ -163,5 +163,84 @@ for i in texto:
         count_word[i] += 1
     else:
         count_word[i] = 1
-
 print(count_word)
+
+#Functions
+print("\nExercicio 16:\n")
+
+def sum_list_numbers(numbers: list) -> list:
+    return sum(numbers)
+
+test_list = sum_list_numbers([1,2,3,4,5,6,7,8,9,10])
+print(test_list)
+
+print("\nExercicio 17:\n")
+
+def check_if_primo(num: int) -> bool:
+    if num <= 1:
+        return False
+    if num <=3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+primo = check_if_primo(11)
+print(primo)
+
+print("\nExercicio 18:\n")
+
+#full algorithm
+def revert_string(text: str) -> str:
+    tam = len(text)
+    list1 = list(text)
+    i = 0
+    for i in range(tam//2):
+        temp = list1[tam-i-1]
+        list1[tam-i-1] = list1[i]
+        list1[i] = temp
+    return ''.join(list1)
+
+print(revert_string("lapis"))
+
+#easy version:
+def revert_string_easy(text: str) -> str:
+    return text[::-1]
+
+print(revert_string_easy("Testando a versao facil de reverter string."))
+
+print("\nExercicio 19:\n")
+
+def combinations(target_sum: int, numbers: list) -> list:
+    # Lista para armazenar os pares de números que somam ao target_sum
+    result = []
+    # Dicionário para armazenar índices dos números já vistos
+    seen = {}
+    
+    for number in numbers:
+        # Calcula o complemento necessário para formar o target_sum com o número atual
+        complement = target_sum - number
+        if complement in seen:
+            # Se o complemento estiver no dicionário, adiciona o par à lista de resultados
+            result.append((complement, number))
+        # Adiciona o número ao dicionário
+        seen[number] = True
+    
+    return result
+
+# Testando a função
+print(combinations(5, [1, 2, 3, 4, 5]))  # Saída esperada: [(2, 3), (1, 4)]
+
+print("\nExercicio 20:\n")
+
+def order_dict_keys(dicionario: dict) -> list:
+    myKeys = list(dicionario.keys())
+    myKeys.sort()
+    return myKeys
+
+print(order_dict_keys({'ravi': 10, 'rajnish': 9,'sanjeev': 15, 'yash': 2, 'suraj': 32}))
