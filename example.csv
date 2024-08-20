@@ -1,0 +1,5 @@
+nome, quantidade, preco, disponibilidade
+Natan, 39, 100, True
+David, 12, 90, False
+Myke, 48, 68.5, True
+Tom, 15, 75.2, True
